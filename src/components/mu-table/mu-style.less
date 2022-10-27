@@ -176,18 +176,27 @@
                     }
                 }
 
+                .thdl-shadow {
+                    box-shadow: 2px 0 6px -2px rgba(0, 0, 0, 0.2);
+                }
+
                 th.fixed-right,
                 td.fixed-right {
                     position   : -webkit-sticky !important;
                     position   : sticky !important;
                     right      : 0;
-                    border-left: @border-solid-gray;
+                    border-left: 0.1px solid #E8E8E8;
                     text-align : center;
                     z-index    : 666;
 
                     &:first-child {
                         box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
                     }
+                }
+
+
+                .thdr-shadow {
+                    box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
                 }
 
             }
