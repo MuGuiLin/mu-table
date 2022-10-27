@@ -41,12 +41,14 @@ export default {
         },
         {
           type: "index",
-          width: 80,
+          width: 100,
           fixed: "left",
         },
         {
           title: "姓名",
+          width: 120,
           key: "name",
+          fixed: "left",
         },
         {
           title: "性别",
@@ -68,6 +70,8 @@ export default {
         },
         {
           title: "状态",
+          fixed: "right",
+          width: 150,
           key: "status",
           render: (h, params) => {
             const color = ["#01BB90", "#F35353", "#FF8130", "#0099FF"];
@@ -81,6 +85,8 @@ export default {
         {
           title: "日期",
           key: "date",
+          fixed: "right",
+          width: 200,
           sorter: true,
         },
         {
@@ -104,7 +110,8 @@ export default {
                     },
                     on: {
                       click: () => {
-                        console.log(params);
+                        this.data[0].name = 6666666666
+                        console.log(this.data);
                       },
                     },
                   },

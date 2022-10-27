@@ -150,16 +150,20 @@ export const column = {
       let style = {};
       if (column.width) {
         style.width = `${column.width}px`;
-        if (column.fixed) {
-          if (index) {
-            if ("left" === column.fixed) {
-              style.left = `${
-                index > 1
-                  ? thead[index - 1].width + (column.width / 2 + 10)
-                  : thead[index - 1].width
-              }px`;
-              style.zIndex = thead.length - index;
+        if (column.fixed && index) {
+          if ("left" === column.fixed) {
+            let left = 0;
+            for (let i = 0; i < index; i++) {
+              left += thead[i]?.width || column.width;
             }
+            style.left = `${left}px`;
+          }
+          if ("right" === column.fixed) {
+            let right = 0;
+            for (let i = thead.length; i > index; i--) {
+              right += thead[i]?.width || column.width;
+            }
+            style.right = `${right - column.width}px`;
           }
         }
       }
