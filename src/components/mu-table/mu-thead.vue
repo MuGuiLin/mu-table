@@ -55,7 +55,7 @@ export default {
         <th
           v-for="(o, i) in thead"
           :key="i"
-          :class="o.fixed ? `fixed-${o.fixed} f-l-${i}` : ''"
+          :class="o.fixed ? `fixed-${o.fixed}` : ''"
           :style="setCellStyle(thead, o, i)"
         >
           <div>
